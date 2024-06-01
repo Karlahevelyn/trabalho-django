@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="br-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roupas</title>
+    <link rel="stylesheet" href="./../../static/css/roupas.css">
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="./inicio.html">Início</a></li>
+            <li><a href="./base.html">Cadastro</a></li>
+            <li><a href="./login.html">Login</a></li>
+            <li><a href="./home.html">Cadastro de Roupas</a></li>
+            <li><a href="./../roupas/feminino.html">Roupas Femininas</a></li>
+            <li><a href="./../roupas/masculino.html">Roupas Masculinas</a></li>
+            <li><a href="./roupas.html">Roupas</a></li>
+        </ul>
+    </nav>
+    <header>
+        <nav>
+            <!-- Outros itens do menu -->
+            <form id="search-form" action="{% url 'pesquisar' %}" method="get">
+                <input type="text" name="q" id="search-input" placeholder="Pesquisar...">
+                <button type="submit">Pesquisar</button>
+            </form>
+        </nav>
+    </header>
+<!-- Outros conteúdos -->
+<footer>
+<p>© 2024 Meu Site. Todos os direitos reservados.</p>
+</footer>
+    <div id="search-results"></div>
+    
+    {% extends 'roupas/base.html'%}
+{% block conteudo %}
+
+        {% endfor %}
+   
+{% endblock %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('search-form');
+    const input = document.getElementById('search-input');
+    const resultsDiv = document.getElementById('search-results');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();  // Impede o envio do formulário padrão
+
+        const query = input.value;
+
+        fetch(`/pesquisar/?q=${query}`)
+            .then(response => response.text())
+            .then(html => {
+                resultsDiv.innerHTML = html;
+            })
+            .catch(error => console.error('Erro:', error));
+    });
+});
+</script>
+</body>
+</html>

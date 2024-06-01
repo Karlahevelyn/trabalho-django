@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INICIO</title>
+    <style>  
+    </style>
+    <link rel="stylesheet" href="./../../static/css/inicio.css">
+</head>
+<body>
+    <div id="presentation-box"></div>
+    <h1>FACILITA ROUPAS</h1>
+<nav>
+        <ul>
+            <li><a href="./inicio.html">Início</a></li>
+            <li><a href="./base.html">Cadastro</a></li>
+            <li><a href="./login.html">Login</a></li>
+            <li><a href="./home.html">Cadastro de Roupas</a></li>
+            <li><a href="./../roupas/feminino.html">Roupas Femininas</a></li>
+            <li><a href="./../roupas/masculino.html">Roupas Masculinas</a></li>
+            <li><a href="./roupas.html">Roupas</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        const presentationBox = document.getElementById('presentation-box');
+
+const presentationContent = `
+    <h1>Bem-vindo ao FACILITA ROUPAS!</h1>
+    <p>Você adora encontrar roupas incríveis em lojas online como a Shein, mas sente que às vezes é um desafio navegar entre tantas opções? Nós temos a solução perfeita para você!</p>
+    <p>No FACILITA, nosso objetivo é facilitar sua busca pelas peças de moda mais estilosas e acessíveis. Reunimos uma seleção cuidadosamente curada de roupas, organizadas de maneira prática e visual, para que você encontre exatamente o que está procurando com apenas alguns cliques.</p>
+    <h2>O que você encontrará aqui:</h2>
+    <ul>
+        <li><strong>Fotos Inspiradoras:</strong> Navegue por imagens de alta qualidade que mostram as roupas em detalhes, para que você tenha uma visão clara de cada peça.</li>
+        <li><strong>Links Diretos:</strong> Clique nos links e vá diretamente para a página do produto na Shein, facilitando suas compras sem perder tempo.</li>
+        <li><strong>Tendências de Moda:</strong> Fique por dentro das últimas tendências e descubra novas inspirações para o seu guarda-roupa.</li>
+        <li><strong>Facilidade de Navegação:</strong> Nossa interface intuitiva permite que você encontre rapidamente o que deseja, seja por categoria, estilo ou ocasião.</li>
+    </ul>
+    <p>Nossa missão é tornar sua experiência de compra online mais agradável e eficiente. Esperamos que você goste de explorar e encontrar peças que combinem perfeitamente com seu estilo.</p>
+    <h2>Comece Agora!</h2>
+    <p>Explore nossas coleções e descubra a próxima peça favorita para o seu guarda-roupa. Boa navegação e boas compras!</p>
+</div>
+    </div>
+`;
+presentationBox.innerHTML = presentationContent;
+    </script>
+</body>
+</html>

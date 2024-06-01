@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Roupas</title>
+  <link rel="stylesheet" href="./../../static/css/cadroupas.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="./inicio.html">Início</a></li>
+      <li><a href="./base.html">Cadastro</a></li>
+      <li><a href="./login.html">Login</a></li>
+      <li><a href="./home.html">Cadastro de Roupas</a></li>
+      <li><a href="./../roupas/feminino.html">Roupas Femininas</a></li>
+      <li><a href="./../roupas/masculino.html">Roupas Masculinas</a></li>
+      <li><a href="./roupas.html">Roupas</a></li>i>
+    </ul>
+</nav>
+  {% extends 'roupas/base.html'%}
+{% block conteudo %}
+<form action="{% url 'listagem_roupas' %}" method="post">
+  {% csrf_token %}
+  <div class="form-container">
+    <h1>Cadastrar Roupa</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_loja">Loja:</label>
+            <input type="text" id="id_loja" name="loja" placeholder="Digite o nome da loja" required>
+        </div>
+        <div class="form-group">
+            <label for="id_tipo">Tipo:</label>
+            <input type="text" id="id_tipo" name="tipo" placeholder="Digite o tipo da roupa" required>
+        </div>
+        <div class="form-group">
+            <label for="id_descricao">Descrição:</label>
+            <textarea id="id_descricao" name="descricao" placeholder="Digite a descrição da roupa" required></textarea>
+        </div>
+        <button type="submit">Cadastrar</button>
+    </form>
+</div>
+</body>
+{% endblock %}
+</body>
+</html>
